@@ -1,0 +1,37 @@
+.MoviesModule {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.movies_list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.buttons_block {
+    display: flex;
+    justify-content: space-around;
+    padding-top: 20px;
+}
+
+.buttons {
+    background-color: deepskyblue;
+    color: snow;
+    border: 1px solid #ccc;
+    padding: 5px 10px;
+    margin-right: 5px;
+    cursor: pointer;
+}
+
+.buttons:hover {
+    background-color: cornflowerblue;
+}
+
+.buttons:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+

@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
+
 import { MovieType, PaginationType } from "../../../interfaces";
+import css from './Movies.module.css';
 import { usePageQuery } from "../../../hooks";
 import { movieService } from "../../../services";
 import {Movie} from "../Movie/Movie";
@@ -37,17 +39,17 @@ const Movies = () => {
     };
 
     return (
-        <div>
-            <div>
+        <div className={css.MoviesModule}>
+            <div className={css.movies_list}>
                 {movies.results.map((movie:MovieType) => <Movie  key={movie.id} movie={movie}/>)}
             </div>
-            <div>
-                <button disabled={isPrevDisabled} onClick={prevPage}>prev</button>
+            <div className={css.buttons_block}>
+                <button disabled={isPrevDisabled} onClick={prevPage} className={css.buttons}>prev</button>
                 <div>
                     <Pagination currentPage={page !== null && page !== undefined ? parseInt(page) : 1}
                                 totalPages={movies.total_pages} setPage={goToPage}/>
                 </div>
-                <button disabled={isNextDisabled} onClick={nextPage}>next</button>
+                <button disabled={isNextDisabled} onClick={nextPage} className={css.buttons}>next</button>
             </div>
         </div>
     );

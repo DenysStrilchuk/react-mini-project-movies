@@ -1,4 +1,5 @@
 import React from "react";
+import css from "./Pagination.module.css"
 
 interface PaginationProps {
     currentPage: number;
@@ -14,7 +15,7 @@ const Pagination: React.FC<PaginationProps> = ({ currentPage, totalPages, setPag
     return (
         <div>
             {pages.slice(startPage - 1, endPage).map((page) => (
-                <button  key={page} onClick={() => setPage(page)} disabled={page === currentPage}>
+                <button  key={page} onClick={() => setPage(page)} disabled={page === currentPage} className={css.button}>
                     {page}
                 </button>
             ))}

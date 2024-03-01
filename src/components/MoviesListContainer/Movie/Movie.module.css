@@ -1,0 +1,14 @@
+.Movie  {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 21%;
+    padding-top: 20px;
+}
+
+.Movie:hover {
+    cursor: pointer;
+    background-color: aliceblue;
+}
+
