@@ -1,4 +1,6 @@
 export * from "./Header/Header";
+export * from "./MovieInfoContainer";
+export * from "./MoviesCardContainer";
 export * from "./MoviesListContainer/Movie/Movie";
 export * from "./MoviesListContainer/Movies/Movies";
 export * from "./PaginationContainer/Pagination";

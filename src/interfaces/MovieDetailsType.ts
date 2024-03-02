@@ -9,4 +9,5 @@ export interface MovieDetailsType {
     release_date: string;
     runtime: number;
     vote_average: number;
+    backdrop_path: string;
 }
