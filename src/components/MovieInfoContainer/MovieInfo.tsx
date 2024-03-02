@@ -1,5 +1,8 @@
 import {FC, PropsWithChildren} from 'react';
+
 import {GenreType} from "../../interfaces";
+import {Genre} from "../GenresInfoContainer";
+import css from "./MovieInfo.module.css"
 
 interface IProps extends PropsWithChildren {
     overview: string,
@@ -16,15 +19,19 @@ const MovieInfo: FC<IProps> = ({ overview, release, runtime, genres, onGenreClic
             <h2>Overview:</h2>
             <p>{overview}</p>
             <h2>Genres</h2>
-            <div>
+            <div className={css.genres}>
                 {genres.map((genre, index) => (
-                    <Genre key={index} genre={genre} onGenreClick={onGenreClick}/>
+                    <Genre key={index} genre={genre} onGenreClick={onGenreClick} movieCount={genre.movieCount}/>
                 ))}
+            </div>
+            <div>
                 <h2>Runtime</h2>
                 <p>{runtime} minutes</p>
                 <h2>Release date</h2>
                 <p>{release}</p>
             </div>
+
+
         </div>
     );
 };
