@@ -5,27 +5,27 @@ import {GenresPage, MovieCardPage, MoviesByGenrePage, MoviesListPage, SearchPage
 
 const router = createBrowserRouter([
     {
-        path:'', element:<MainLayout/>, children: [
+        path: '', element: <MainLayout/>, children: [
             {
-                index:true, element:<Navigate to={'movies'}/>
+                index: true, element: <Navigate to={'movies'}/>
             },
             {
-                path:'movies', element:<MoviesListPage/>
+                path: 'movies', element: <MoviesListPage/>
             },
             {
-                path:'movie/:id', element:<MovieCardPage/>
+                path: 'movie/:id', element: <MovieCardPage/>
             },
             {
-                path:'genres', element:<GenresPage/>, children: [
+                path: 'genres', element: <GenresPage/>, children: [
                     {
-                        path:':id', element:<MoviesByGenrePage/>
+                        path: ':id', element: <MoviesByGenrePage/>
                     }
                 ]
             },
             {
-                path:'search', element:<SearchPage/>, children: [
+                path: 'search', element: <SearchPage/>, children: [
                     {
-                        index:true, element:<Navigate to={'movies'}/>
+                        index: true, element: <Navigate to={'movies'}/>
                     }
                 ]
             }

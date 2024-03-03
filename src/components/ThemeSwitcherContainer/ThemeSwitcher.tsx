@@ -1,9 +1,10 @@
 import React, {JSX} from 'react';
-import { useTheme } from '../ThemeContextContainer/ThemeContext';
 import ReactSwitch from "react-switch";
 
+import {useTheme} from "../ThemeContextContainer";
+
 const ThemeSwitcher = (): JSX.Element => {
-    const { isDarkMode, toggleTheme } = useTheme();
+    const {isDarkMode, toggleTheme} = useTheme();
 
     return (
         <div>

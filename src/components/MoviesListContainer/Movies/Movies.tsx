@@ -1,15 +1,15 @@
-import { useEffect, useState } from "react";
+import {useEffect, useState} from "react";
 
-import { MovieType, PaginationType } from "../../../interfaces";
+import {MovieType, PaginationType} from "../../../interfaces";
 import css from './Movies.module.css';
-import { usePageQuery } from "../../../hooks";
-import { movieService } from "../../../services";
+import {usePageQuery} from "../../../hooks";
+import {movieService} from "../../../services";
 import {Movie} from "../Movie/Movie";
 import {Pagination} from "../../PaginationContainer";
 
 const Movies = () => {
-    const [movies, setMovies] = useState<PaginationType>({ page: 0, total_pages: 0, results: [] });
-    const { page, prevPage, nextPage, setPage } = usePageQuery();
+    const [movies, setMovies] = useState<PaginationType>({page: 0, total_pages: 0, results: []});
+    const {page, prevPage, nextPage, setPage} = usePageQuery();
     const [isPrevDisabled, setIsPrevDisabled] = useState<boolean>(true);
     const [isNextDisabled, setIsNextDisabled] = useState<boolean>(false);
 
@@ -21,7 +21,7 @@ const Movies = () => {
                 if (Array.isArray(data)) {
                     return
                 }
-                const { page: newPage, total_pages, results } = data;
+                const {page: newPage, total_pages, results} = data;
                 setMovies({
                     page: newPage,
                     total_pages,
@@ -33,14 +33,14 @@ const Movies = () => {
         }
     }, [page]);
 
-    const goToPage = (newPage: number)  => {
+    const goToPage = (newPage: number) => {
         setPage(newPage.toString());
     };
 
     return (
         <div className={css.MoviesModule}>
             <div className={css.movies_list}>
-                {movies.results.map((movie:MovieType) => <Movie  key={movie.id} movie={movie}/>)}
+                {movies.results.map((movie: MovieType) => <Movie key={movie.id} movie={movie}/>)}
             </div>
             <div className={css.buttons_block}>
                 <button disabled={isPrevDisabled} onClick={prevPage} className={css.buttons}>prev</button>

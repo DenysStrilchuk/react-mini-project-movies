@@ -13,7 +13,7 @@ interface IProps extends PropsWithChildren {
     onGenreClick: (genre: GenreType) => void;
 }
 
-const MovieInfo: FC<IProps> = ({ overview, release, runtime, genres, onGenreClick }) => {
+const MovieInfo: FC<IProps> = ({overview, release, runtime, genres, onGenreClick}) => {
     return (
         <div>
             <h2>Overview:</h2>

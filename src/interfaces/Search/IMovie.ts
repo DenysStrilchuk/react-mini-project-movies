@@ -1,4 +1,4 @@
-import {GenreType} from "../GenreType";
+import {GenreType} from "../Genres/GenreType";
 
 export interface IMovie {
     adult: boolean;

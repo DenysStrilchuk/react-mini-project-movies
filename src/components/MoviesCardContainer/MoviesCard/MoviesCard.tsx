@@ -1,17 +1,18 @@
-import { useEffect, useState } from 'react';
-import {MovieType} from "../../../interfaces";
+import {useEffect, useState} from 'react';
 import {useNavigate, useParams} from "react-router-dom";
-import { movieService } from "../../../services";
-import { MovieCard } from "../MovieCard/MovieCard";
+
+import {MovieType} from "../../../interfaces";
+import {movieService} from "../../../services";
+import {MovieCard} from "../MovieCard/MovieCard";
 import css from "./MoviesCard.module.css";
 
 const MoviesCard = () => {
-    const { id } = useParams<{ id?: string }>();
+    const {id} = useParams<{ id?: string }>();
     const [movieCard, setMoviesCard] = useState<MovieType | null>(null);
     const navigate = useNavigate();
     useEffect(() => {
         if (id) {
-            movieService.getByMovieId(parseInt(id)).then(({ data }) => {
+            movieService.getByMovieId(parseInt(id)).then(({data}) => {
                 setMoviesCard(data);
             });
         }
@@ -26,9 +27,9 @@ const MoviesCard = () => {
             <div className={css.backBtn}>
                 <button onClick={goBack}>Back</button>
             </div>
-            {movieCard && <MovieCard movieCard={movieCard} />}
+            {movieCard && <MovieCard movieCard={movieCard}/>}
         </div>
     );
 };
 
-export { MoviesCard };
+export {MoviesCard};

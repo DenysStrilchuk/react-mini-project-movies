@@ -12,7 +12,7 @@ interface IProps extends PropsWithChildren {
 
 const MovieCard: FC<IProps> = ({movieCard}) => {
     const {title, overview, vote_average, genres, backdrop_path, release_date, runtime} = movieCard;
-    const [,setSelectedGenre] = useState<GenreType |  null>(null);
+    const [, setSelectedGenre] = useState<GenreType | null>(null);
 
     const handleGenreClick = (genre: GenreType) => {
         setSelectedGenre(genre);

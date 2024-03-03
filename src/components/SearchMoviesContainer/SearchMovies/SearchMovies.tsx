@@ -1,12 +1,13 @@
-import React, { useState } from "react";
+import React, {useState} from "react";
 
-import { IMovie } from "../../../interfaces/Search/IMovie";
-import { Movie} from "../../../components/MoviesListContainer/Movie/Movie";
-import { searchService } from "../../../services/searchService";
 import css from "./SearchMovies.module.css";
+import {IMovie} from "../../../interfaces";
+import {Movie} from "../../MoviesListContainer";
+import {searchService} from "../../../services";
 
 
-interface SearchMoviesProps {}
+interface SearchMoviesProps {
+}
 
 const SearchMovies: React.FC<SearchMoviesProps> = () => {
     const [query, setQuery] = useState("");
@@ -40,11 +41,11 @@ const SearchMovies: React.FC<SearchMoviesProps> = () => {
             </div>
             <div className={css.movies_list}>
                 {movies.map((movie) => (
-                    <Movie key={movie.id} movie={movie} />
+                    <Movie key={movie.id} movie={movie}/>
                 ))}
             </div>
         </div>
     );
 };
 
-export { SearchMovies };
+export {SearchMovies};

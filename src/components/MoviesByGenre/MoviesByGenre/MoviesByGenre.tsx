@@ -1,31 +1,30 @@
-import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
-
-import {GenreResponse, MovieType, PaginationType} from "../../../interfaces";
-import { usePageQuery } from "../../../hooks";
-import { genreService } from "../../../services";
-import { Pagination } from "../../PaginationContainer";
-import {MovieByGenre} from "../MovieByGenre/MovieByGenre";
-import css  from "./MoviesByGenre.module.css";
+import React, {useEffect, useState} from "react";
+import {useParams} from "react-router-dom";
 import {AxiosResponse} from "axios";
 
+import {GenreResponse, MovieType, PaginationType} from "../../../interfaces";
+import {usePageQuery} from "../../../hooks";
+import {genreService} from "../../../services";
+import {Pagination} from "../../PaginationContainer";
+import {MovieByGenre} from "../MovieByGenre/MovieByGenre";
+import css from "./MoviesByGenre.module.css";
+
 const MoviesByGenre = () => {
-    const { id = '1' } = useParams<{ id: string }>();
-    const [movies, setMovies] = useState<PaginationType>({ page: 0, total_pages: 0, results: [] });
-    const { page, prevPage, nextPage, setPage } = usePageQuery();
+    const {id = '1'} = useParams<{ id: string }>();
+    const [movies, setMovies] = useState<PaginationType>({page: 0, total_pages: 0, results: []});
+    const {page, prevPage, nextPage, setPage} = usePageQuery();
     const [isPrevDisabled, setIsPrevDisabled] = useState<boolean>(true);
     const [isNextDisabled, setIsNextDisabled] = useState<boolean>(false);
 
     useEffect(() => {
         if (page !== null) {
             const pageNumber = parseInt(page !== undefined ? page : "1");
-            genreService.getByGenreId(parseInt(id), pageNumber).then((response:AxiosResponse<GenreResponse>) => {
+            genreService.getByGenreId(parseInt(id), pageNumber).then((response: AxiosResponse<GenreResponse>) => {
                 const data = response.data;
                 if (!("page" in data && "total_pages" in data && "results" in data)) {
-                    // обробка помилки або виправлення некоректних даних
                     return;
                 }
-                const { page: newPage, total_pages, results } = data as PaginationType;
+                const {page: newPage, total_pages, results} = data as PaginationType;
                 setMovies({
                     page: newPage,
                     total_pages,
@@ -44,7 +43,7 @@ const MoviesByGenre = () => {
     return (
         <div>
             <div className={css.movies_list}>
-                {movies.results.map((movie: MovieType) => <MovieByGenre key={movie.id} movie={movie} />)}
+                {movies.results.map((movie: MovieType) => <MovieByGenre key={movie.id} movie={movie}/>)}
             </div>
             <div className={css.buttons_block}>
                 <button disabled={isPrevDisabled} onClick={prevPage} className={css.buttons}>prev</button>
@@ -58,4 +57,4 @@ const MoviesByGenre = () => {
     );
 };
 
-export { MoviesByGenre };
+export {MoviesByGenre};

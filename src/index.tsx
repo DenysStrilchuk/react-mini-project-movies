@@ -6,9 +6,8 @@ import './index.css';
 import {ThemeProvider} from "./components";
 
 
-
 const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement
+    document.getElementById('root') as HTMLElement
 );
 root.render(
     <ThemeProvider>

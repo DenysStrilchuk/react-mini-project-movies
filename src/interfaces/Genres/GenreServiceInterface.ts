@@ -1,4 +1,4 @@
-import {IRes} from "../types";
+import {IRes} from "../../types";
 import {IGenre} from "./GenreInterface";
 
 export interface IGenreService {

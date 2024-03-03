@@ -1,4 +1,5 @@
 import {FC, PropsWithChildren} from 'react';
+
 import css from "./Poster.module.css"
 
 interface IProps extends PropsWithChildren {

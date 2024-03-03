@@ -1,4 +1,4 @@
-import {MovieType} from "./MovieType";
+import {MovieType} from "../Movies/MovieType";
 
 export interface PaginationType {
     page: number;

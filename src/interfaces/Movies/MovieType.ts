@@ -1,6 +1,6 @@
-import {GenreType} from "./GenreType";
+import {GenreType} from "../Genres/GenreType";
 
-export interface MovieDetailsType {
+export interface MovieType {
     id: number;
     title: string;
     poster_path: string;

@@ -1,4 +1,4 @@
-import {MovieByGenre} from "./MovieByGenre";
+import {MovieByGenre} from "../Movies/MovieByGenre";
 
 export interface MoviesByGenreResponse {
     page: number;
