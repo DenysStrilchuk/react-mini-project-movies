@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { IMovie } from "../../../interfaces/Search/IMovie";
 import { Movie} from "../../../components/MoviesListContainer/Movie/Movie";
 import { searchService } from "../../../services/searchService";
+import css from "./SearchMovies.module.css";
 
 
 interface SearchMoviesProps {}
@@ -28,7 +29,7 @@ const SearchMovies: React.FC<SearchMoviesProps> = () => {
 
     return (
         <div>
-            <div>
+            <div className={css.input_style}>
                 <input
                     type="text"
                     placeholder="Search movies..."
@@ -37,7 +38,7 @@ const SearchMovies: React.FC<SearchMoviesProps> = () => {
                 />
                 <button onClick={handleSearch}>Search</button>
             </div>
-            <div>
+            <div className={css.movies_list}>
                 {movies.map((movie) => (
                     <Movie key={movie.id} movie={movie} />
                 ))}
