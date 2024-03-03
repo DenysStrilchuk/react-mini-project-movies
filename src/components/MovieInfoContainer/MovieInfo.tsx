@@ -17,7 +17,7 @@ const MovieInfo: FC<IProps> = ({ overview, release, runtime, genres, onGenreClic
     return (
         <div>
             <h2>Overview:</h2>
-            <p>{overview}</p>
+            <p className={css.pInfo}>{overview}</p>
             <h2>Genres</h2>
             <div className={css.genres}>
                 {genres.map((genre, index) => (
@@ -26,9 +26,9 @@ const MovieInfo: FC<IProps> = ({ overview, release, runtime, genres, onGenreClic
             </div>
             <div className={css.runTimeBlock}>
                 <h2>Runtime</h2>
-                <p>{runtime} minutes</p>
+                <p className={css.pInfo}>{runtime} minutes</p>
                 <h2>Release date</h2>
-                <p>{release}</p>
+                <p className={css.pInfo}>{release}</p>
             </div>
 
 

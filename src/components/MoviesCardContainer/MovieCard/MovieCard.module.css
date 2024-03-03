@@ -17,14 +17,17 @@
     justify-content: center;
     align-items: center;
     width: 50%;
+    font-family: "Malayalam MN", sans-serif;
 }
 
 .title {
     display: flex;
     justify-content: center;
     align-items: center;
+    font-family: "Malayalam MN", sans-serif;
 }
 
 .movieInfo {
     width: 100%;
+    font-family: "Malayalam MN", sans-serif;
 }
