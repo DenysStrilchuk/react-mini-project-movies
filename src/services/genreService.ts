@@ -1,14 +1,10 @@
-import {IRes} from "../types";
-import {GenreType} from "../interfaces";
+
 import {apiService} from "./apiService";
 import {urls} from "../constants";
+import {IGenreService} from "../interfaces/GenreServiceInterface";
 
-const genreService = {
-    getAll: (): IRes<GenreType[]>  => apiService.get(urls.genres.base),
-    getByGenreId: (genreId: number, page: number): IRes<GenreType[]> => apiService.get(urls.genres.byGenreId(genreId), {params:{page}})
-}
-
-
-export {
-    genreService
-}
+export const genreService: IGenreService= {
+    getAll: () => apiService.get(urls.genres.base),
+    getByGenreId: (genreId, page) =>
+        apiService.get(urls.genres.byGenreId(genreId), { params: { page } }),
+};

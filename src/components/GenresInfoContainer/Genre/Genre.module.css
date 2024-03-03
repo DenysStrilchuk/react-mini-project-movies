@@ -1,12 +1,11 @@
 .genre_badge {
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
-    height: 40px;
+    height: 90px;
+    width: 5%;
     margin-top: 20px;
     font-size: 15px;
     cursor: pointer;
-    background-color: deepskyblue;
 }
-

@@ -19,8 +19,7 @@ const Movies = () => {
             movieService.getAll(pageNumber).then((response) => {
                 const data = response.data;
                 if (Array.isArray(data)) {
-
-                    return;
+                    return
                 }
                 const { page: newPage, total_pages, results } = data;
                 setMovies({
