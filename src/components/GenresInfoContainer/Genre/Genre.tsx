@@ -7,9 +7,10 @@ import css  from "./Genre.module.css"
 
 interface IProps extends PropsWithChildren {
     genre: GenreType;
+    onGenreClick: (genre: GenreType) => void;
 }
 
-const Genre: FC<IProps> = ({ genre }) => {
+const Genre: FC<IProps> = ({ genre, onGenreClick }) => {
     const { id, name } = genre;
     const navigate = useNavigate()
 

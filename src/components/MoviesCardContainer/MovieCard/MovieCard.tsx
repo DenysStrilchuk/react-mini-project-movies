@@ -3,7 +3,7 @@ import {MyCustomStarRating} from "../../StarRatingContainer/MyCustomStarRating";
 
 import {GenreType, MovieDetailsType} from "../../../interfaces";
 import {BackdropPoster} from "../../PosterPreviewContainer";
-// import {MovieInfo} from "../../MovieInfoContainer";
+import {MovieInfo} from "../../MovieInfoContainer";
 import css from "./MovieCard.module.css";
 
 interface IProps extends PropsWithChildren {

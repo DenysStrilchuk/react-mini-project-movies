@@ -13,9 +13,13 @@ const Genres = () => {
         genreService.getAll().then(({ data }) => setGenres(data));
     }, []);
 
+    const handleGenreClick = (genre: IGenre) => {
+        console.log(`Clicked on genre: ${genre.name}`);
+    };
+
     return (
         <div className={css.Genres}>
-            {genres.genres.map(genre => <Genre key={genre.id} genre={genre} />)}
+            {genres.genres.map(genre => <Genre key={genre.id} genre={genre} onGenreClick={handleGenreClick}/>)}
 a        </div>
     );
 };
