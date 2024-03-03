@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
-import { MovieType, PaginationType } from "../../../interfaces";
+import {GenreResponse, MovieType, PaginationType} from "../../../interfaces";
 import { usePageQuery } from "../../../hooks";
 import { genreService } from "../../../services";
 import { Pagination } from "../../PaginationContainer";
 import {MovieByGenre} from "../MovieByGenre/MovieByGenre";
 import css  from "./MoviesByGenre.module.css";
+import {AxiosResponse} from "axios";
 
 const MoviesByGenre = () => {
     const { id = '1' } = useParams<{ id: string }>();
@@ -18,7 +19,7 @@ const MoviesByGenre = () => {
     useEffect(() => {
         if (page !== null) {
             const pageNumber = parseInt(page !== undefined ? page : "1");
-            genreService.getByGenreId(parseInt(id), pageNumber).then((response) => {
+            genreService.getByGenreId(parseInt(id), pageNumber).then((response:AxiosResponse<GenreResponse>) => {
                 const data = response.data;
                 if (!("page" in data && "total_pages" in data && "results" in data)) {
                     // обробка помилки або виправлення некоректних даних
