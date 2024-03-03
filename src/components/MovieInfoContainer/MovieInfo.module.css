@@ -1,6 +1,9 @@
 .genres {
     display: flex;
-    justify-content: space-around;
-    width: 50%;
+    justify-content: space-between;
+    width: 70%;
 }
 
+.runTimeBlock {
+    padding-top: 2%;
+}

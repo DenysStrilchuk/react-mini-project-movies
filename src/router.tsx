@@ -23,7 +23,11 @@ const router = createBrowserRouter([
                 ]
             },
             {
-                path:'search', element:<SearchPage/>
+                path:'search', element:<SearchPage/>, children: [
+                    {
+                        index:true, element:<Navigate to={'movies'}/>
+                    }
+                ]
             }
         ]
     }

@@ -24,7 +24,7 @@ const MovieInfo: FC<IProps> = ({ overview, release, runtime, genres, onGenreClic
                     <Genre key={index} genre={genre} onGenreClick={onGenreClick}/>
                 ))}
             </div>
-            <div>
+            <div className={css.runTimeBlock}>
                 <h2>Runtime</h2>
                 <p>{runtime} minutes</p>
                 <h2>Release date</h2>

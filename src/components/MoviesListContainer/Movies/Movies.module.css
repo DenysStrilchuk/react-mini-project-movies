@@ -15,12 +15,14 @@
     display: flex;
     justify-content: space-around;
     padding-top: 20px;
+    padding-bottom: 20px;
 }
 
 .buttons {
     background-color: deepskyblue;
     color: snow;
-    border: 1px solid #ccc;
+    border: 1px solid deepskyblue;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
     padding: 5px 10px;
     margin-right: 5px;
     cursor: pointer;
@@ -28,6 +30,7 @@
 
 .buttons:hover {
     background-color: cornflowerblue;
+    border: 1px solid cornflowerblue;
 }
 
 .buttons:disabled {

@@ -3,8 +3,6 @@
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-    height: 90px;
-    width: 5%;
     margin-top: 20px;
     font-size: 15px;
     cursor: pointer;

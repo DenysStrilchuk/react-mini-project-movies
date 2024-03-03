@@ -5,8 +5,32 @@
     align-items: center;
 }
 
-.input_style {
+.input_style  {
     display: flex;
     justify-content: center;
     align-items: center;
+    padding-top: 20px;
+}
+
+.input_style input {
+    padding: 10px;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    width: 30%;
+}
+
+.input_style button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.input_style button:hover {
+    background-color: #0056b3;
 }
