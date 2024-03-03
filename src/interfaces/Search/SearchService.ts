@@ -1,6 +1,6 @@
 import {IRes} from "../../types";
 import {MovieSearchResponse} from "./MovieSearchResponse";
 
-export interface MovieService {
+export interface SearchService {
     getAll: (query: string) => IRes<MovieSearchResponse>;
 }

@@ -9,3 +9,4 @@ export * from "./PaginationContainer/Pagination";
 export * from "./PosterPreviewContainer/MainPoster/PosterPreview";
 export * from "./SearchMoviesContainer";
 export * from "./StarRatingContainer/MyCustomStarRating";
+export * from "./ThemeContextContainer";

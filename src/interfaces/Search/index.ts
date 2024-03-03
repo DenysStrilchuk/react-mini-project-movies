@@ -1,3 +1,3 @@
 export * from "./IMovie";
 export * from "./MovieSearchResponse";
-export * from "./MovieService";
+export * from "./SearchService";
