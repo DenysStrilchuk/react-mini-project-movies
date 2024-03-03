@@ -16,8 +16,7 @@ const Genre: FC<IProps> = ({ genre, onGenreClick }) => {
 
     return (
         <Button className={css.genre_badge} onClick={() => navigate(`/genres/${id}`)} variant="primary">
-            {name} <Badge bg="secondary">9</Badge>
-            <span className="visually-hidden">unread messages</span>
+            {name}<Badge bg="secondary">9</Badge>
         </Button>
     )};
 

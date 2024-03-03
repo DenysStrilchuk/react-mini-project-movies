@@ -13,9 +13,7 @@ const Genres = () => {
         genreService.getAll().then(({ data }) => setGenres(data));
     }, []);
 
-    const handleGenreClick = (genre: IGenre) => {
-        console.log(`Clicked on genre: ${genre.name}`);
-    };
+    const handleGenreClick = (genre: IGenre) => {};
 
     return (
         <div className={css.Genres}>
