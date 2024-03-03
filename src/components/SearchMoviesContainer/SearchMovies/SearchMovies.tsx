@@ -1,17 +1,21 @@
-import React, {useState} from "react";
-import {SearchResultType} from "../../../interfaces";
-import {searchService} from "../../../services";
-import {Movie} from "../../MoviesListContainer";
+import React, { useState } from "react";
 
-const SearchMovies = () => {
-    const [query, setQuery] = useState('');
-    const [movies, setMovies] = useState<SearchResultType[]>([]);
+import { IMovie } from "../../../interfaces/Search/IMovie";
+import { Movie} from "../../../components/MoviesListContainer/Movie/Movie";
+import { searchService } from "../../../services/searchService";
+
+
+interface SearchMoviesProps {}
+
+const SearchMovies: React.FC<SearchMoviesProps> = () => {
+    const [query, setQuery] = useState("");
+    const [movies, setMovies] = useState<IMovie[]>([]);
 
     const handleSearch = async () => {
         if (query.trim() !== "") {
             try {
                 const response = await searchService.getAll(query);
-                setMovies(response.data);
+                setMovies(response.data.results);
             } catch (error) {
                 console.error("Error fetching data: ", error);
             }
@@ -34,10 +38,12 @@ const SearchMovies = () => {
                 <button onClick={handleSearch}>Search</button>
             </div>
             <div>
-                {movies.map(movie => <Movie key={movie.id} movie={movie}/>)}
+                {movies.map((movie) => (
+                    <Movie key={movie.id} movie={movie} />
+                ))}
             </div>
         </div>
     );
 };
 
-export {SearchMovies};
+export { SearchMovies };

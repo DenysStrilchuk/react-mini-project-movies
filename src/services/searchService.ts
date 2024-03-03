@@ -1,13 +1,15 @@
-import {IRes} from "../types";
-import {SearchResultType} from "../interfaces";
 import {apiService} from "./apiService";
 import {urls} from "../constants";
+import {MovieSearchResponse, MovieService} from "../interfaces";
 
-const searchService = {
-    getAll: (query: string): IRes<SearchResultType[]> => {
-        return apiService.get(urls.search.base, {params:{query}})
-    }
-}
+const searchService: MovieService = {
+    getAll: (query: string) => {
+        return apiService.get<MovieSearchResponse>(
+            `${urls.search.base}?query=${query}`
+        );
+    },
+};
+
 
 export {
     searchService

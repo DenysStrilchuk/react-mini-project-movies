@@ -1,3 +1,4 @@
+export * from "./Search";
 export * from "./GenreInterface";
 export * from "./GenreResponse";
 export * from "./GenreServiceInterface";
@@ -10,4 +11,3 @@ export * from "./MovieType";
 export * from "./PageQuery";
 export * from "./PaginationType";
 export * from "./ParamsInterface";
-export * from "./SearchResultType";
