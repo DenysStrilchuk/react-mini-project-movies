@@ -1,0 +1,13 @@
+.MovieByGenre  {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 21%;
+    padding-top: 20px;
+}
+
+.MovieByGenre:hover {
+    cursor: pointer;
+    background-color: aliceblue;
+}
