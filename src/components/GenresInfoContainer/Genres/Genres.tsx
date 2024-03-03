@@ -16,7 +16,7 @@ const Genres = () => {
     return (
         <div className={css.Genres}>
             {genres.genres.map(genre => <Genre key={genre.id} genre={genre} />)}
-        </div>
+a        </div>
     );
 };
 
